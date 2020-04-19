@@ -1,0 +1,85 @@
+<div class="workside fixed-top">
+  <nav id="header" class="fixed-top navbar-fixed navbar navbar-expand-lg container navbar-dark">
+
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    <a class="navbar-brand logo" routerLink="/home">
+      <span><strong>examen</strong>Arbete</span>
+    </a>
+    <div class="navvbar collapse navbar-collapse navbgcollapse" id="navbarSupportedContent">
+      <div *ngIf="isLoggedIn; then loggedin; else notloggedin"></div>
+    </div>
+  </nav>
+</div>
+<ng-template #loggedin>
+    <ul class="navbar-nav mr-auto ml-auto">
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="hover-color nav-link" routerLink="/home" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">HOME</a>
+        </li>
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="hover-color nav-link" routerLink="/products" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">PRODUCTS</a>
+        </li>
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="hover-color nav-link" routerLink="/about" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">ABOUT</a>
+        </li>
+      </ul>
+
+  <ul class="navbar-nav my-2 my-lg-0">
+    <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <a class="hover-color nav-link user" routerLink="/profile" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">{{ user.firstname }} {{ user.lastname }}</a>
+    </li>
+
+    <li class="nav-item mr-sm-2 nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <a class="hover-color nav-link" routerLink="/logout">LOGOUT</a>
+    </li>
+    <li class="nav-item mr-sm-2 nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <a class="hover-color nav-link" routerLink="/cart" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"><i class="fas fa-shopping-cart"></i></a>
+        <!-- <strong class="itemQuantity text-center">{{itemQuantity}}</strong> -->
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #notloggedin>
+ 
+    <ul class="navbar-nav mr-auto ml-auto">
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="hover-color nav-link" routerLink="/home" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">HOME</a>
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="hover-color nav-link" routerLink="/products" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">PRODUCTS</a>
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="hover-color nav-link" routerLink="/about" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">ABOUT</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item mr-sm-2 nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="hover-color nav-link" routerLink="/login" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">LOGIN</a>
+      </li>
+      <li class="nav-item mr-sm-2 nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="hover-color nav-link my-2 my-sm-0" routerLink="/register" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">REGISTER</a>
+      </li>
+      <li class="nav-item mr-sm-2 nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="hover-color nav-link" routerLink="/cart" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"><i class="fas fa-shopping-cart"></i></a>
+          <!-- <strong class="itemQuantity text-center">{{itemQuantity}}</strong> -->
+      </li>
+    </ul>
+
+</ng-template>
+
+<script>
+</script>
