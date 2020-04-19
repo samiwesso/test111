@@ -120,7 +120,37 @@
                         <div class="overview-section overview-tabs">
 
 
-                            <table class="table">
+
+
+                            <div class="order-info2" id="oredrs">
+                                <div class="row text-center product-info">
+                                  <div class="col"><strong>Product</strong></div>
+                                  <div class="col"><strong>Product name</strong></div>
+                                  <div class="col"><strong>Product price</strong></div>
+                                </div>
+                          
+                                <div *ngFor="let item of items" class="mt-2 pb-2 border-bottom row columns-info">
+                                  <div class="col"><img src="{{ item.product.img }}" alt=""></div>
+                                  <div class="col">{{ item.product.name }}</div>
+                                  <div class="col">${{ item.product.price }}</div>
+                                </div>
+                          
+                                <div class="row text-center mt-3 pt-3">
+                                    <div class="col"><strong>Total:</strong></div>
+                                    <div class="col"><strong></strong></div>
+                                    <div class="col"><strong>${{ total }}</strong></div>
+                                  </div>
+                          
+                                <button class="btn btn-back mt-5" routerLink="/products" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact: true}">&laquo; Go Back</button>
+                              </div>
+
+
+
+
+
+
+                            <!-- <table class="table">
                                 <thead>
                                     <tr>
                                         <th>Order number</th>
@@ -149,7 +179,7 @@
 
                                 </tbody>
 
-                            </table>
+                            </table> -->
 
                             <div class="collapse" id="order-info">
                                 <div class="card card-body">
